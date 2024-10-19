@@ -41,13 +41,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(BookNotFoundException.class)
     public ResponseEntity<ErrorResponseDto> handleCategoryNotFoundException(BookNotFoundException ex, WebRequest request) {
         String apiPath = extractApiPath(request.getDescription(false));
-        ErrorResponseDto errorResponseDto = new ErrorResponseDto(
-                apiPath,
-                ex.getMessage(),
-                HttpStatus.NOT_FOUND,
-                LocalDateTime.now()
-        );
-
+        ErrorResponseDto errorResponseDto = new ErrorResponseDto();
+        errorResponseDto.setApiPath(apiPath);
+        errorResponseDto.setErrorMessage(ex.getMessage());
+        errorResponseDto.setStatus(HttpStatus.NOT_FOUND);
+        errorResponseDto.setErrorTime(LocalDateTime.now());
         return new ResponseEntity<>(errorResponseDto, HttpStatus.NOT_FOUND);
     }
 
@@ -57,12 +55,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponseDto> globalExceptionHandler(Exception e, WebRequest webRequest) {
         String apiPath = extractApiPath(webRequest.getDescription(false));
-        ErrorResponseDto errorResponseDto = new ErrorResponseDto(
-                apiPath,
-                e.getMessage(),
-                HttpStatus.INTERNAL_SERVER_ERROR,
-                LocalDateTime.now()
-        );
+        ErrorResponseDto errorResponseDto = new ErrorResponseDto();
+        errorResponseDto.setApiPath(apiPath);
+        errorResponseDto.setErrorMessage(e.getMessage());
+        errorResponseDto.setStatus(HttpStatus.NOT_FOUND);
+        errorResponseDto.setErrorTime(LocalDateTime.now());
 
         return new ResponseEntity<>(errorResponseDto, HttpStatus.INTERNAL_SERVER_ERROR);
     }
