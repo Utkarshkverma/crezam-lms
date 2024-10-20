@@ -38,7 +38,7 @@ public class BookServiceImpl implements IBookService {
     @Override
     public BookDto updateBook(String isbn, BookDto bookDto) {
         Books books = bookRepository
-                .findById(isbn)
+                .findByIsbn(isbn)
                 .orElseThrow(() -> new BookNotFoundException(isbn));
         books.setTitle(bookDto.getTitle());
         books.setAuthor(bookDto.getAuthor());
@@ -54,7 +54,7 @@ public class BookServiceImpl implements IBookService {
     @Override
     public BookDto getBook(String isbn) {
         Books books = bookRepository
-                .findById(isbn)
+                .findByIsbn(isbn)
                 .orElseThrow(() -> new BookNotFoundException(isbn));
         return bookMapper.entityToDto(books);
 
@@ -63,7 +63,7 @@ public class BookServiceImpl implements IBookService {
     @Override
     public CustomMessageDto deleteBook(String isbn) {
         bookRepository
-                .findById(isbn)
+                .findByIsbn(isbn)
                 .ifPresentOrElse(bookRepository::delete,
                         ()-> {
                     throw new BookNotFoundException(isbn);

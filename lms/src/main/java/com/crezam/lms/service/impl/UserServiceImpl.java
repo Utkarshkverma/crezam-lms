@@ -44,7 +44,7 @@ public class UserServiceImpl implements IUserService {
                 .builder()
                 .message("Role has been updated")
                 .success(true)
-                .httpStatus(HttpStatus.NO_CONTENT)
+                .httpStatus(HttpStatus.OK)
                 .build();
     }
 
@@ -85,7 +85,7 @@ public class UserServiceImpl implements IUserService {
                 .builder()
                 .message("User has been removed successfully")
                 .success(true)
-                .httpStatus(HttpStatus.NO_CONTENT)
+                .httpStatus(HttpStatus.OK)
                 .build();
     }
 }

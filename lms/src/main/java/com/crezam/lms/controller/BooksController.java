@@ -200,7 +200,7 @@ public class BooksController {
             @Parameter(description = "The ISBN of the book to delete", required = true, example = "978-3-16-148410-0")
             @PathVariable String isbn){
         CustomMessageDto customMessageDto = bookService.deleteBook(isbn);
-        return new ResponseEntity<>(customMessageDto,HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(customMessageDto,HttpStatus.OK);
     }
     @Operation(
             summary = "Update the book",
