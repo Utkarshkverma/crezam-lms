@@ -15,18 +15,15 @@ import org.springframework.http.HttpStatus;
 )
 public class CustomMessageDto {
     @Schema(
-            description = "Schema provided by server",
-            example = "Book has been removed successfully"
+            description = "Schema provided by server"
     )
     private String message;
     @Schema(
-            description = "Message to send success flag",
-            example = "true"
+            description = "Message to send success flag"
     )
     private boolean success;
     @Schema(
-            description = "Schema to send http status",
-            example = "NO_CONTENT"
+            description = "Schema to send http status"
     )
     private HttpStatus httpStatus;
 

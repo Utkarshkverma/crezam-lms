@@ -5,6 +5,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -38,8 +39,20 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     }
 
+
     @ExceptionHandler(BookNotFoundException.class)
     public ResponseEntity<ErrorResponseDto> handleCategoryNotFoundException(BookNotFoundException ex, WebRequest request) {
+        String apiPath = extractApiPath(request.getDescription(false));
+        ErrorResponseDto errorResponseDto = new ErrorResponseDto();
+        errorResponseDto.setApiPath(apiPath);
+        errorResponseDto.setErrorMessage(ex.getMessage());
+        errorResponseDto.setStatus(HttpStatus.NOT_FOUND);
+        errorResponseDto.setErrorTime(LocalDateTime.now());
+        return new ResponseEntity<>(errorResponseDto, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(UsernameNotFoundException.class)
+    public ResponseEntity<ErrorResponseDto> handleUsernameNotFoundException(UsernameNotFoundException ex, WebRequest request) {
         String apiPath = extractApiPath(request.getDescription(false));
         ErrorResponseDto errorResponseDto = new ErrorResponseDto();
         errorResponseDto.setApiPath(apiPath);

@@ -17,50 +17,27 @@ import java.util.List;
 public class CustomPageResponseDto<T>
 {
     @Schema(
-            description = "Schema to hold the current Page number",
-            example = "5"
+            description = "Schema to hold the current Page number"
     )
     private  int pageNumber;
     @Schema(
-            description = "Schema to hold the no of entities in current Page",
-            example = "10"
+            description = "Schema to hold the no of entities in current Page"
     )
     private int pageSize;
     @Schema(
-            description = "Schema to hold the total no of entities in our database",
-            example = "1000"
+            description = "Schema to hold the total no of entities in our database"
     )
     private long totalElements;
     @Schema(
-            description = "Schema to hold the total no. of pages formed",
-            example = "100"
+            description = "Schema to hold the total no. of pages formed"
     )
     private  int totalPages;
     @Schema(
-            description = "Schema to tell if the current page is last page",
-            example = "true"
+            description = "Schema to tell if the current page is last page"
     )
     private boolean isLast;
     @Schema(
-            description = "Schema to hold the list of content inside the page",
-            example = "[\n" +
-                    "    {\n" +
-                    "        \"isbn\": \"978-3-16-148410-0\",\n" +
-                    "        \"title\": \"Effective Java\",\n" +
-                    "        \"author\": \"Joshua Bloch\",\n" +
-                    "        \"category\": \"Programming\",\n" +
-                    "        \"availableCopies\": 10,\n" +
-                    "        \"publishedYear\": 2021\n" +
-                    "    },\n" +
-                    "    {\n" +
-                    "        \"isbn\": \"978-1-56619-909-4\",\n" +
-                    "        \"title\": \"Clean Code\",\n" +
-                    "        \"author\": \"Robert C. Martin\",\n" +
-                    "        \"category\": \"Programming\",\n" +
-                    "        \"availableCopies\": 15,\n" +
-                    "        \"publishedYear\": 2008\n" +
-                    "    }\n" +
-                    "]\n"
+            description = "Schema to hold the list of content inside the page"
 
     )
     private List<T> content;

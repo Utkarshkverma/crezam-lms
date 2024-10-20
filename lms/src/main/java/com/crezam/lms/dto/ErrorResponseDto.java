@@ -16,23 +16,19 @@ import java.time.LocalDateTime;
 )
 public class ErrorResponseDto {
     @Schema(
-            description = "API path invoked by the client",
-            example = "/api/v1/books/978-1-4028-9462-6"
+            description = "API path invoked by the client"
     )
     private String apiPath;
     @Schema(
-            description = "Error code representing the error happened",
-            example = "BAD_REQUEST"
+            description = "Error code representing the error happened"
     )
     private HttpStatus status;
     @Schema(
-            description = "Error message representing the error happened",
-            example = "Book not found with isbn: 978-1-4028-9462-6"
+            description = "Error message representing the error happened"
     )
     private String errorMessage;
     @Schema(
-            description = "Time representing when the error happened",
-            example = "2024-09-12T19:19:48.4453257"
+            description = "Time representing when the error happened"
     )
     private LocalDateTime errorTime;
 
