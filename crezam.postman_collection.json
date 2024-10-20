@@ -1,0 +1,2228 @@
+{
+	"info": {
+		"_postman_id": "d2c74313-7fa0-4484-9bb7-a1bc386a01b4",
+		"name": "crezam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32128600"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"Utkarsh\",\r\n    \"email\" : \"vermau2k01@gmail.com\",\r\n    \"phoneNumber\" : \"9905893941\",\r\n    \"password\" : \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7070/api/v1/auth/public/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"public",
+								"sign-up"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"Utkarsh\",\r\n    \"email\" : \"vermau2k01@gmail.com\",\r\n    \"phoneNumber\" : \"9905893941\",\r\n    \"password\" : \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7070/api/v1/auth/public/sign-up",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"public",
+										"sign-up"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 13:57:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User Registered successfully\",\n    \"success\": true,\n    \"httpStatus\": \"OK\"\n}"
+						},
+						{
+							"name": "Failed Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"Utkarsh\",\r\n    \"email\" : \"vermau2k01@gmail.com\",\r\n    \"phoneNumber\" : \"9905893941\",\r\n    \"password\" : \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7070/api/v1/auth/public/sign-up",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"public",
+										"sign-up"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 13:58:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiPath\": \"/auth/public/sign-up\",\n    \"status\": \"BAD_REQUEST\",\n    \"errorMessage\": \"Email already in use\",\n    \"errorTime\": \"2024-10-20T19:28:28.2476345\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"akhandps2002@gmail.com\",\r\n    \"password\" : \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7070/api/v1/auth/public/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"public",
+								"sign-in"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"akhandps2002@gmail.com\",\r\n    \"password\" : \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7070/api/v1/auth/public/sign-in",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"public",
+										"sign-in"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 13:59:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jwtToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJha2hhbmRwczIwMDJAZ21haWwuY29tIiwiaWF0IjoxNzI5NDMyNzkzLCJleHAiOjE3Mjk1MTkxOTN9.QEq4QDZ_ZmJWTeiE-F-5dcthyEq__mg5pT3nciq6r2s\",\n    \"username\": \"akhandps2002@gmail.com\",\n    \"roles\": [\n        \"ROLE_USER\"\n    ]\n}"
+						},
+						{
+							"name": "Failure Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"akhandps2002@gmail.co\",\r\n    \"password\" : \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7070/api/v1/auth/public/sign-in",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"public",
+										"sign-in"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:00:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Bad credentials\",\n    \"status\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJha2hhbmRwczIwMDJAZ21haWwuY29tIiwiaWF0IjoxNzI5NDMyNzkzLCJleHAiOjE3Mjk1MTkxOTN9.QEq4QDZ_ZmJWTeiE-F-5dcthyEq__mg5pT3nciq6r2s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7070/api/v1/auth/username",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"username"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/auth/username",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"username"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:11:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Akhand"
+						},
+						{
+							"name": "Failure Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/auth/username",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"username"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:19:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiPath\": \"/api/v1/auth/username\",\n    \"status\": \"NOT_FOUND\",\n    \"errorMessage\": \"Cannot invoke \\\"org.springframework.security.core.userdetails.UserDetails.getUsername()\\\" because \\\"userDetails\\\" is null\",\n    \"errorTime\": \"2024-10-20T19:49:07.4195484\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Get All books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7070/api/v1/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Without Authentication",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"books"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=C2FFC0C5511F1361A20D81C8C6BE4A59; Path=/api/v1; HttpOnly"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "121"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:27:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"path\": \"/books\",\n    \"error\": \"Unauthorized\",\n    \"message\": \"Full authentication is required to access this resource\",\n    \"status\": 401\n}"
+						},
+						{
+							"name": "With Authentication",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"books"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:35:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"totalElements\": 2,\n    \"totalPages\": 1,\n    \"content\": [\n        [\n            {\n                \"id\": \"153fd5f7-b333-4d24-8813-68a46ba6489a\",\n                \"isbn\": \"978-0-06-112008-4\",\n                \"title\": \"To Kill a Mockingbird\",\n                \"author\": \"Harper Lee\",\n                \"category\": \"Fiction\",\n                \"availableCopies\": 3,\n                \"publishedYear\": 1960\n            },\n            {\n                \"id\": \"8936ef35-2884-4742-a20c-52891bc8a7bd\",\n                \"isbn\": \"978-0-7432-7356-5\",\n                \"title\": \"A Brief History of Time\",\n                \"author\": \"Stephen Hawking\",\n                \"category\": \"Science\",\n                \"availableCopies\": 5,\n                \"publishedYear\": 1988\n            }\n        ]\n    ],\n    \"last\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Get book by isbn number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7070/api/v1/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failure",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/books/978-0-06-112008-4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"978-0-06-112008-4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:38:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiPath\": \"/api/v1/books/978-0-06-112008-4\",\n    \"status\": \"NOT_FOUND\",\n    \"errorMessage\": \"Book not found with isbn: 978-0-06-112008-4\",\n    \"errorTime\": \"2024-10-20T20:08:27.6969923\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/books/978-0-06-112008-4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"978-0-06-112008-4"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:40:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"153fd5f7-b333-4d24-8813-68a46ba6489a\",\n    \"isbn\": \"978-0-06-112008-4\",\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"category\": \"Fiction\",\n    \"availableCopies\": 3,\n    \"publishedYear\": 1960\n}"
+						}
+					]
+				},
+				{
+					"name": "Add a book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2ZXJtYXUyazAxQHByb3Rvbi5tZSIsImlhdCI6MTcyOTQzNDgyMywiZXhwIjoxNzI5NTIxMjIzfQ.dBdMSL9m6iI5BuKK6PW-oHazFnprON4XAHQRzb1-7Fk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isbn\": \"978-0-7432-7356-5\",\r\n    \"title\": \"A Brief History of Time\",\r\n    \"author\": \"Stephen Hawking\",\r\n    \"category\": \"Science\",\r\n    \"availableCopies\": 5,\r\n    \"publishedYear\": 1988\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7070/api/v1/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Unauthorized response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"books"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:29:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2024-10-20T14:29:19.252+00:00\",\n    \"status\": 403,\n    \"error\": \"Forbidden\",\n    \"message\": \"Forbidden\",\n    \"path\": \"/api/v1/books\"\n}"
+						},
+						{
+							"name": "Add a book",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isbn\": \"978-0-7432-7356-5\",\r\n    \"title\": \"A Brief History of Time\",\r\n    \"author\": \"Stephen Hawking\",\r\n    \"category\": \"Science\",\r\n    \"availableCopies\": 5,\r\n    \"publishedYear\": 1988\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7070/api/v1/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"books"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:34:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"8936ef35-2884-4742-a20c-52891bc8a7bd\",\n    \"isbn\": \"978-0-7432-7356-5\",\n    \"title\": \"A Brief History of Time\",\n    \"author\": \"Stephen Hawking\",\n    \"category\": \"Science\",\n    \"availableCopies\": 5,\n    \"publishedYear\": 1988\n}"
+						}
+					]
+				},
+				{
+					"name": "Update a book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2ZXJtYXUyazAxQHByb3Rvbi5tZSIsImlhdCI6MTcyOTQzNDgyMywiZXhwIjoxNzI5NTIxMjIzfQ.dBdMSL9m6iI5BuKK6PW-oHazFnprON4XAHQRzb1-7Fk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"isbn\": \"978-0-06-112008-4\",\r\n    \"title\": \"To Kill a Mockingbird\",\r\n    \"author\": \"Harper Lee\",\r\n    \"category\": \"Fiction\",\r\n    \"availableCopies\": 3,\r\n    \"publishedYear\": 1960\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7070/api/v1/books/978-0-06-112008-4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"978-0-06-112008-4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "With Admin credentials",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n    \"isbn\": \"978-0-06-112008-4\",\r\n    \"title\": \"To Kill a Mockingbird\",\r\n    \"author\": \"Harper Lee\",\r\n    \"category\": \"Fiction\",\r\n    \"availableCopies\": 3,\r\n    \"publishedYear\": 1960\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7070/api/v1/books/978-0-06-112008-4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"978-0-06-112008-4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:47:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"153fd5f7-b333-4d24-8813-68a46ba6489a\",\n    \"isbn\": \"978-0-06-112008-4\",\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"category\": \"Fiction\",\n    \"availableCopies\": 3,\n    \"publishedYear\": 1960\n}"
+						},
+						{
+							"name": "Without admin credentials",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n    \"isbn\": \"978-0-06-112008-4\",\r\n    \"title\": \"To Kill a Mockingbird\",\r\n    \"author\": \"Harper Lee\",\r\n    \"category\": \"Fiction\",\r\n    \"availableCopies\": 3,\r\n    \"publishedYear\": 1960\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7070/api/v1/books/978-0-06-112008-4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"978-0-06-112008-4"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:48:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2024-10-20T14:48:30.451+00:00\",\n    \"status\": 403,\n    \"error\": \"Forbidden\",\n    \"message\": \"Forbidden\",\n    \"path\": \"/api/v1/books/978-0-06-112008-4\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Search By category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJha2hhbmRwczIwMDJAZ21haWwuY29tIiwiaWF0IjoxNzI5NDMyNzkzLCJleHAiOjE3Mjk1MTkxOTN9.QEq4QDZ_ZmJWTeiE-F-5dcthyEq__mg5pT3nciq6r2s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7070/api/v1/books/search?keyword=fiction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "fiction"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search By category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/books/search?keyword=fiction",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"search"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "fiction"
+										}
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:52:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"content\": [\n        [\n            {\n                \"id\": \"153fd5f7-b333-4d24-8813-68a46ba6489a\",\n                \"isbn\": \"978-0-06-112008-4\",\n                \"title\": \"To Kill a Mockingbird\",\n                \"author\": \"Harper Lee\",\n                \"category\": \"Fiction\",\n                \"availableCopies\": 3,\n                \"publishedYear\": 1960\n            }\n        ]\n    ],\n    \"last\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJha2hhbmRwczIwMDJAZ21haWwuY29tIiwiaWF0IjoxNzI5NDMyNzkzLCJleHAiOjE3Mjk1MTkxOTN9.QEq4QDZ_ZmJWTeiE-F-5dcthyEq__mg5pT3nciq6r2s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7070/api/v1/books/978-0-06-112008-4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"978-0-06-112008-4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Without authorization",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/books/978-0-06-112008-4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"978-0-06-112008-4"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:55:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2024-10-20T14:55:03.594+00:00\",\n    \"status\": 403,\n    \"error\": \"Forbidden\",\n    \"message\": \"Forbidden\",\n    \"path\": \"/api/v1/books/978-0-06-112008-4\"\n}"
+						},
+						{
+							"name": "With Authorization",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/books/978-0-7432-7356-5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"978-0-7432-7356-5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 14:59:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Book has been removed successfully\",\n    \"success\": true,\n    \"httpStatus\": \"NO_CONTENT\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Members",
+			"item": [
+				{
+					"name": "Get All members",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "With Authentication",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/members",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"members"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 15:01:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"pageNumber\": 0,\n    \"pageSize\": 10,\n    \"totalElements\": 3,\n    \"totalPages\": 1,\n    \"content\": [\n        [\n            {\n                \"userId\": \"efff3d37-9439-452e-85a2-ea88c735a00d\",\n                \"userName\": \"Akhand\",\n                \"email\": \"akhandps2002@gmail.com\",\n                \"contactNumber\": \"9905893940\",\n                \"isActive\": \"ACTIVE\",\n                \"signUpMethod\": \"email\"\n            },\n            {\n                \"userId\": \"40c0ca13-4d41-435c-8deb-fbca69ad312f\",\n                \"userName\": \"Utkarsh\",\n                \"email\": \"vermau2k01@gmail.com\",\n                \"contactNumber\": \"9905893941\",\n                \"isActive\": \"ACTIVE\",\n                \"signUpMethod\": \"email\"\n            },\n            {\n                \"userId\": \"55dfdad0-0335-4b17-bef5-9965da6876ee\",\n                \"userName\": \"Utkarsh Verma\",\n                \"email\": \"vermau2k01@proton.me\",\n                \"contactNumber\": \"9905893942\",\n                \"isActive\": \"ACTIVE\",\n                \"signUpMethod\": \"email\"\n            }\n        ]\n    ],\n    \"last\": true\n}"
+						},
+						{
+							"name": "Without Authentication",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/members",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"members"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 15:02:55 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2024-10-20T15:02:55.569+00:00\",\n    \"status\": 403,\n    \"error\": \"Forbidden\",\n    \"message\": \"Forbidden\",\n    \"path\": \"/api/v1/members\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Member by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJha2hhbmRwczIwMDJAZ21haWwuY29tIiwiaWF0IjoxNzI5NDMyNzkzLCJleHAiOjE3Mjk1MTkxOTN9.QEq4QDZ_ZmJWTeiE-F-5dcthyEq__mg5pT3nciq6r2s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7070/api/v1/members/efff3d37-9439-452e-85a2-ea88c735a00d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"efff3d37-9439-452e-85a2-ea88c735a00d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Without Authorization",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/members/efff3d37-9439-452e-85a2-ea88c735a00d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"members",
+										"efff3d37-9439-452e-85a2-ea88c735a00d"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 15:08:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2024-10-20T15:08:14.338+00:00\",\n    \"status\": 403,\n    \"error\": \"Forbidden\",\n    \"message\": \"Forbidden\",\n    \"path\": \"/api/v1/members/efff3d37-9439-452e-85a2-ea88c735a00d\"\n}"
+						},
+						{
+							"name": "With Authorization",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/members/efff3d37-9439-452e-85a2-ea88c735a00d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"members",
+										"efff3d37-9439-452e-85a2-ea88c735a00d"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 15:08:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": \"efff3d37-9439-452e-85a2-ea88c735a00d\",\n    \"userName\": \"Akhand\",\n    \"email\": \"akhandps2002@gmail.com\",\n    \"contactNumber\": \"9905893940\",\n    \"isActive\": \"ACTIVE\",\n    \"signUpMethod\": \"email\"\n}"
+						},
+						{
+							"name": "User Doesn't exist with id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/members/efff3d37-9439-452e-85a2-ea88c735a00e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"members",
+										"efff3d37-9439-452e-85a2-ea88c735a00e"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 15:09:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiPath\": \"/api/v1/members/efff3d37-9439-452e-85a2-ea88c735a00e\",\n    \"status\": \"NOT_FOUND\",\n    \"errorMessage\": \"User with id efff3d37-9439-452e-85a2-ea88c735a00e not found\",\n    \"errorTime\": \"2024-10-20T20:39:27.6626253\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Role of a member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2ZXJtYXUyazAxQHByb3Rvbi5tZSIsImlhdCI6MTcyOTQzNDgyMywiZXhwIjoxNzI5NTIxMjIzfQ.dBdMSL9m6iI5BuKK6PW-oHazFnprON4XAHQRzb1-7Fk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\" : \"ROLE_ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7070/api/v1/members/efff3d37-9439-452e-85a2-ea88c735a00d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"efff3d37-9439-452e-85a2-ea88c735a00d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "With Authorization",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"roleName\" : \"ROLE_ADMIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:7070/api/v1/members/efff3d37-9439-452e-85a2-ea88c735a00d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"members",
+										"efff3d37-9439-452e-85a2-ea88c735a00d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 15:56:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Role has been updated\",\n    \"success\": true,\n    \"httpStatus\": \"OK\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJha2hhbmRwczIwMDJAZ21haWwuY29tIiwiaWF0IjoxNzI5NDMyNzkzLCJleHAiOjE3Mjk1MTkxOTN9.QEq4QDZ_ZmJWTeiE-F-5dcthyEq__mg5pT3nciq6r2s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:7070/api/v1/members/40c0ca13-4d41-435c-8deb-fbca69ad312f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7070",
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"40c0ca13-4d41-435c-8deb-fbca69ad312f"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:7070/api/v1/members/40c0ca13-4d41-435c-8deb-fbca69ad312f",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "7070",
+									"path": [
+										"api",
+										"v1",
+										"members",
+										"40c0ca13-4d41-435c-8deb-fbca69ad312f"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Oct 2024 16:01:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"apiPath\": \"/api/v1/members/40c0ca13-4d41-435c-8deb-fbca69ad312f\",\n    \"status\": \"NOT_FOUND\",\n    \"errorMessage\": \"User with id 40c0ca13-4d41-435c-8deb-fbca69ad312f not found\",\n    \"errorTime\": \"2024-10-20T21:31:09.1557979\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
