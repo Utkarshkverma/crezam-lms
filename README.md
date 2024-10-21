@@ -72,53 +72,50 @@ Once the application is running, you can access the API documentation by visitin
 
 The following SQL script creates the schema for the `users`, `books`, and `roles` tables:
 ```bash
--- Create roles table
-CREATE TABLE roles (
-    role_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    role_name VARCHAR(20) NOT NULL UNIQUE
-);
-
--- Insert default roles
-INSERT INTO roles (role_name) VALUES ('ROLE_USER'), ('ROLE_ADMIN');
-
--- Create users table
-CREATE TABLE users (
-    user_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    username VARCHAR(50) NOT NULL UNIQUE,
-    email VARCHAR(50) NOT NULL UNIQUE,
-    phoneNo VARCHAR(15) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    account_non_locked BOOLEAN DEFAULT TRUE,
-    account_non_expired BOOLEAN DEFAULT TRUE,
-    credentials_non_expired BOOLEAN DEFAULT TRUE,
-    enabled BOOLEAN DEFAULT TRUE,
-    credentials_expiry_date DATE,
-    account_expiry_date DATE,
-    sign_up_method VARCHAR(50),
-    role_id UUID,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (role_id) REFERENCES roles(role_id) ON DELETE SET NULL
-);
-
--- Create books table
+-- Books Table
 CREATE TABLE books (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    isbn VARCHAR(20) NOT NULL UNIQUE,
-    title VARCHAR(255) NOT NULL,
-    author VARCHAR(100) NOT NULL,
-    category VARCHAR(50) NOT NULL,
-    available_copies INT NOT NULL,
-    published_year INT NOT NULL
+                       id               VARCHAR(255) NOT NULL,
+                       author           VARCHAR(255) NOT NULL,
+                       available_copies INTEGER NOT NULL,
+                       category         VARCHAR(255) NOT NULL,
+                       isbn             VARCHAR(255) NOT NULL,
+                       published_year   INTEGER NOT NULL,
+                       title            VARCHAR(255) NOT NULL,
+                       PRIMARY KEY (id),
+                       CONSTRAINT UC_Books_Title UNIQUE (title)
 );
 
--- Indexing for performance
-CREATE INDEX idx_username ON users(username);
-CREATE INDEX idx_email ON users(email);
-CREATE INDEX idx_phoneNo ON users(phoneNo);
-CREATE INDEX idx_isbn ON books(isbn);
-CREATE INDEX idx_title ON books(title);
-CREATE INDEX idx_author ON books(author);
+-- Roles Table
+CREATE TABLE roles (
+                       role_id   VARCHAR(255) NOT NULL,
+                       role_name VARCHAR(20) CHECK (role_name IN ('ROLE_USER', 'ROLE_ADMIN')),
+                       PRIMARY KEY (role_id)
+);
+
+-- Users Table
+CREATE TABLE users (
+                       user_id                    VARCHAR(255) NOT NULL,
+                       account_expiry_date        DATE,
+                       account_non_expired        BOOLEAN NOT NULL,
+                       account_non_locked         BOOLEAN NOT NULL,
+                       phone_no                   VARCHAR(255) NOT NULL,
+                       created_at                 TIMESTAMP(6),
+                       credentials_expiry_date    DATE,
+                       credentials_non_expired    BOOLEAN NOT NULL,
+                       email                      VARCHAR(255),
+                       enabled                    BOOLEAN NOT NULL,
+                       password                   VARCHAR(255) NOT NULL,
+                       sign_up_method             VARCHAR(255),
+                       updated_at                 TIMESTAMP(6),
+                       username                   VARCHAR(255),
+                       role_id                    VARCHAR(255),
+                       PRIMARY KEY (user_id),
+                       CONSTRAINT UC_Users_Username UNIQUE (username),
+                       CONSTRAINT UC_Users_Email UNIQUE (email),
+                       CONSTRAINT UC_Users_PhoneNo UNIQUE (phone_no),
+                       CONSTRAINT FK_Users_Role FOREIGN KEY (role_id) REFERENCES roles(role_id)
+);
+
 ```
 
 
