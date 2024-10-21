@@ -28,7 +28,7 @@ public class MemberController {
     private final IUserService userService;
 
     @Operation(
-            summary = "fetch all users",
+            summary = "fetch all users (Admin only)",
             description = "This endpoint will allow admin to fetch all users"
 
     )

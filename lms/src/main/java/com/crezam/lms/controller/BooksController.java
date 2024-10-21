@@ -67,7 +67,7 @@ public class BooksController {
 
 
     @Operation(
-            summary = "Add a book",
+            summary = "Add a book (ADMIN only)",
             description = "This endpoint will allow you to add a book in database"
     )
     @ApiResponses({
@@ -167,7 +167,7 @@ public class BooksController {
 
 
     @Operation(
-            summary = "Remove the book",
+            summary = "Remove the book (Admin only)",
             description = "This endpoint will allow you to find a book by category and delete it"
     )
     @ApiResponses({
@@ -203,7 +203,7 @@ public class BooksController {
         return new ResponseEntity<>(customMessageDto,HttpStatus.OK);
     }
     @Operation(
-            summary = "Update the book",
+            summary = "Update the book (ADMIN only)",
             description = "This endpoint will allow you to find a book by category and update it"
     )
     @ApiResponses({
@@ -240,7 +240,7 @@ public class BooksController {
     )
     @PutMapping("/{isbn}")
     public ResponseEntity<BookDto> updateBook(
-            @Parameter(description = "The ISBN of the book to update", required = true, example = "978-3-16-148410-0")
+            @Parameter(description = "The ISBN of the book to update (ADMIN only)", required = true, example = "978-3-16-148410-0")
             @PathVariable String isbn,
             @Valid @RequestBody BookDto bookDto){
         BookDto bookDto1 = bookService.updateBook(isbn, bookDto);
