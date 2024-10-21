@@ -1,7 +1,7 @@
 package com.crezam.lms.service.impl;
 
-import com.crezam.lms.Repository.RoleRepository;
-import com.crezam.lms.Repository.UserRepository;
+import com.crezam.lms.repository.RoleRepository;
+import com.crezam.lms.repository.UserRepository;
 import com.crezam.lms.dto.CustomMessageDto;
 import com.crezam.lms.dto.CustomPageResponseDto;
 import com.crezam.lms.dto.UserDTO;

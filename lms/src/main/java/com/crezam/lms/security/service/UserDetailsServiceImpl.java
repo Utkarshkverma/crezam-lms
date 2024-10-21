@@ -1,6 +1,6 @@
 package com.crezam.lms.security.service;
 
-import com.crezam.lms.Repository.UserRepository;
+import com.crezam.lms.repository.UserRepository;
 import com.crezam.lms.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

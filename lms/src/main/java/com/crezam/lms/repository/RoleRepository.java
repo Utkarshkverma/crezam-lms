@@ -1,4 +1,4 @@
-package com.crezam.lms.Repository;
+package com.crezam.lms.repository;
 
 import com.crezam.lms.entity.AppRole;
 import com.crezam.lms.entity.Role;

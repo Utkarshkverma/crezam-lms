@@ -1,7 +1,7 @@
 package com.crezam.lms.controller;
 
-import com.crezam.lms.Repository.RoleRepository;
-import com.crezam.lms.Repository.UserRepository;
+import com.crezam.lms.repository.RoleRepository;
+import com.crezam.lms.repository.UserRepository;
 import com.crezam.lms.dto.*;
 import com.crezam.lms.entity.AppRole;
 import com.crezam.lms.entity.Role;
@@ -32,7 +32,6 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor

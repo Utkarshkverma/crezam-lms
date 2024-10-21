@@ -1,6 +1,6 @@
 package com.crezam.lms;
 
-import com.crezam.lms.Repository.RoleRepository;
+import com.crezam.lms.repository.RoleRepository;
 import com.crezam.lms.entity.AppRole;
 import com.crezam.lms.entity.Role;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -9,7 +9,6 @@ import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication

@@ -1,6 +1,6 @@
 package com.crezam.lms.service.impl;
 
-import com.crezam.lms.Repository.BookRepository;
+import com.crezam.lms.repository.BookRepository;
 import com.crezam.lms.dto.BookDto;
 import com.crezam.lms.dto.CustomMessageDto;
 import com.crezam.lms.dto.CustomPageResponseDto;

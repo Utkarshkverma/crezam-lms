@@ -1,4 +1,4 @@
-package com.crezam.lms.Repository;
+package com.crezam.lms.repository;
 
 import com.crezam.lms.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
