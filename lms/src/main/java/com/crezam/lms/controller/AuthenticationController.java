@@ -8,6 +8,11 @@ import com.crezam.lms.entity.Role;
 import com.crezam.lms.entity.User;
 import com.crezam.lms.exception.RoleNotFoundException;
 import com.crezam.lms.security.jwt.JwtUtils;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -48,7 +53,33 @@ public class AuthenticationController {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
-
+    @Operation(
+            summary = "Sign in",
+            description = "This endpoint will allow you to sign in into the server"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Credentials given by user is correct",
+                    content = @Content(
+                            schema = @Schema(implementation = LoginRequestDto.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Credentials given by user is correct",
+                    content = @Content(
+                            schema = @Schema(implementation = Map.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    })
     @PostMapping("/public/sign-in")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequestDto loginRequest) {
         logger.debug("Authenticating user {}", loginRequest);
@@ -74,6 +105,34 @@ public class AuthenticationController {
         LoginResponseDto loginResponseDto = new LoginResponseDto(userDetails.getUsername(), roles, jwtToken);
         return new ResponseEntity<>(loginResponseDto, HttpStatus.OK);
     }
+
+    @Operation(
+            summary = "Register a member",
+            description = "This endpoint will allow you to register a member into the server"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Member is able to register",
+                    content = @Content(
+                            schema = @Schema(implementation = CustomMessageDto.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Member has given some bad credentials",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    })
 
     @PostMapping("/public/sign-up")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequestDto signUpRequest)
@@ -141,7 +200,33 @@ public class AuthenticationController {
         return new ResponseEntity<>(customMessageDto, HttpStatus.OK);
 
     }
-
+    @Operation(
+            summary = "Register a member",
+            description = "This endpoint will allow you to register a member into the server"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Member is able to fetch his/her name from Jwt token",
+                    content = @Content(
+                            schema = @Schema(implementation = String.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Member has given wrong JWT",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    })
     @GetMapping("/username")
     public String currentUserName(@AuthenticationPrincipal UserDetails userDetails) {
         User user = userRepository
